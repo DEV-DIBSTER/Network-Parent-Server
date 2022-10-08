@@ -1,13 +1,14 @@
 {
     "Port": 3000,
     "URL": "example.com",
+    "RestartPassword": "A_Very_SecurePassword",
 
     "Nodes": [
         {
             "Name": "NodeName",   
 
-            "Outgoing_Password": "A_Very_SecurePassword",
             "Domain": "example.com",
+            "Outgoing_Password": "A_Very_SecurePassword",
             "Incoming_Password": "A_Very_SecurePassword"
         }
     ]
