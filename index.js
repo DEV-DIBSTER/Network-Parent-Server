@@ -16,6 +16,19 @@ Server.get('/', async (Request, Response) => {
     Response.status(404).send('Nothing to see here!');
 });
 
+setInterval(() => {
+    Exec(`git pull`, (Error, Stdout) => {
+        let Response = (Error || Stdout);
+        if (!Error) {
+            if (Response.includes("Already up to date.")) {
+
+            } else {
+                Exec('pm2 restart all');
+            };
+        };
+    });
+}, 30 * 1000);
+
 Server.post('/stats', async (Request, Response) => {
     if(!Configuration.Nodes.some(Node => Node.Incoming_Password == Request.headers.password)) return Response.status(403).send('Invalid Authentication.');
 
