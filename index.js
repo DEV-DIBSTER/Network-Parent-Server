@@ -53,7 +53,7 @@ Server.get('/stats', async (Request, Response) => {
     let ResponseData = [];
 
     fs.readdirSync('./Stats/').forEach(m => {
-        delete require.cache[require.resolve('./Stats/${m}')];
+        delete require.cache[require.resolve(`./Stats/${m}`)];
         const FileData = require(`./Stats/${m}`);
         ResponseData.push(FileData);
     });
