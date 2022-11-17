@@ -65,7 +65,8 @@ Server.get('/stats/:id', async (Request, Response) => {
     const Node = Request.params.id;
 
     if(!fs.readdirSync('./Stats/').some(File => File.replace('.json', '') == Node)) return Response.status(404).send('Invalid Parameters Provided.'); //Not a Valid Node.
-
+    
+    delete require.cache[require.resolve(`./Stats/${Node}`)];
     const NodeFile = require(`./Stats/${Node}.json`);
 
     Response.status(200).json(NodeFile);
