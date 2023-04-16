@@ -8,7 +8,8 @@
             "Name": "NodeName",
             "Domain": "example.com",
             "Outgoing_Password": "A_Very_SecurePassword",
-            "Incoming_Password": "A_Very_SecurePassword"
+            "Incoming_Password": "A_Very_SecurePassword",
+            "Restart_Password: "",
         }
     ]
 }
