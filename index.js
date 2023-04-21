@@ -72,6 +72,10 @@ Server.get('/stats/:id', async (Request, Response) => {
     Response.status(200).json(NodeFile);
 });
 
+Server.post('/restart/:id', async (Request, Response) => {
+    Response.status(200).send("Work in progress!");
+});
+
 Server.listen(Configuration.Port, function () {
     const Divider = Chalk.blueBright('------------------------------------------------------\n');
     const Text = Chalk.redBright('██████╗ ██╗██████╗ ███████╗████████╗███████╗██████╗\n██╔══██╗██║██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗\n██║  ██║██║██████╔╝███████╗   ██║   █████╗  ██████╔╝\n██║  ██║██║██╔══██╗╚════██║   ██║   ██╔══╝  ██╔══██╗\n██████╔╝██║██████╔╝███████║   ██║   ███████╗██║  ██║\n╚═════╝ ╚═╝╚═════╝ ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝\n');
