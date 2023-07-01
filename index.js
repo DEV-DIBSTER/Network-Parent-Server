@@ -35,7 +35,7 @@ Server.post('/stats', async (Request, Response) => {
     const Node = Configuration.Nodes.filter(Node => Node.Incoming_Password == Request.headers.password)[0];
 
     const JSON_Response = Request.body;
-    fs.writeFileSync(`./Stats/${Node.Name}.json`, JSON.stringify(JSON_Response, null, 4));
+    fs.writeFileSync(`./Stats/${Node.Name.replace(' ', '')}.json`, JSON.stringify(JSON_Response, null, 4));
 
     const Date = await GetTime();
 
