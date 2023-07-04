@@ -73,7 +73,10 @@ Server.get('/stats/:id', async (Request, Response) => {
 });
 
 Server.post('/restart/:id', async (Request, Response) => {
-    Response.status(200).send("Work in progress!");
+    return Response.status(200).send("Work in progress!");
+    
+    //Will restart the server. Not tested.
+    Exec('pm2 restart all');
 });
 
 Server.listen(Configuration.Port, function () {
